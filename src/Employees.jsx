@@ -90,15 +90,21 @@ const Employees = () => {
   }]);
 
   return (
-    <main>
-      {
-        employees.map((employee) => (
-          <>
-            <p>{employee.fullName}</p>
-            <img src={femaleProfile} />
-          </>
-        ))
-      }
+    <main className='container'>
+      <div className='row'>
+        <div className='col-8'>
+          {
+            employees.map((employee) => (
+              <div id={employee.id} className='card'>
+                <img src={femaleProfile} className='card-img-top' />
+                <div className='card-body'>
+                  <h5 className='card-title'>Full name: {employee.fullName}</h5>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </main>
   )
 }
